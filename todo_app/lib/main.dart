@@ -1,5 +1,9 @@
+import 'package:todo_app/initial_list.dart';
+
 import 'custom_clipper.dart';
 import 'package:flutter/material.dart';
+import 'task_row.dart';
+import 'list_model.dart';
 
 void main() => runApp(new MyApp());
 
@@ -24,17 +28,29 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  final GlobalKey<AnimatedListState> _listKey =
+      new GlobalKey<AnimatedListState>();
   double _imageHeight = 256.0;
+  ListModel listModel;
+  bool showOnlyCompleted = false;
+
+  @override
+  void initState() {
+    super.initState();
+    listModel = new ListModel(_listKey, tasks);
+  }
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      body: new Stack(
+    return Scaffold(
+      body: Stack(
         children: <Widget>[
           _buildImage(),
           _buildTopHeader(),
           _buildProfileRow(),
           _buildBottomPart(),
+          _buildTimeline(),
+          _buildFab(),
         ],
       ),
     );
@@ -151,6 +167,52 @@ class _MainPageState extends State<MainPage> {
   }
 
   Widget _buildTasksList() {
-    return new Container();
+    return new Expanded(
+      child: new AnimatedList(
+        initialItemCount: tasks.length,
+        key: _listKey,
+        itemBuilder: (context, index, animation) {
+          return new TaskRow(
+            task: listModel[index],
+            animation: animation,
+          );
+        },
+      ),
+    );
+  }
+
+  Widget _buildTimeline() {
+    return new Positioned(
+      top: _imageHeight - 55,
+      bottom: 0.0,
+      left: 32.0,
+      child: new Container(
+        width: 1.0,
+        color: Colors.grey[300],
+      ),
+    );
+  }
+
+  Widget _buildFab() {
+    return new Positioned(
+      top: _imageHeight - 36.0,
+      right: 16.0,
+      child: new FloatingActionButton(
+        onPressed: _changeFilterState,
+        backgroundColor: Colors.pink,
+        child: new Icon(Icons.filter_list),
+      ),
+    );
+  }
+
+  void _changeFilterState() {
+    showOnlyCompleted = !showOnlyCompleted;
+    tasks.where((task) => !task.completed).forEach((task) {
+      if (showOnlyCompleted) {
+        listModel.removeAt(listModel.indexOf(task));
+      } else {
+        listModel.insert(tasks.indexOf(task), task);
+      }
+    });
   }
 }
