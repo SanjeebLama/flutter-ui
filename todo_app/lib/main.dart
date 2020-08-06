@@ -1,7 +1,6 @@
-import 'package:todo_app/initial_list.dart';
-
-import 'custom_clipper.dart';
 import 'package:flutter/material.dart';
+import 'package:todo_app/initial_list.dart';
+import 'custom_clipper.dart';
 import 'task_row.dart';
 import 'list_model.dart';
 
