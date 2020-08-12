@@ -12,10 +12,7 @@ class IndexPage extends StatelessWidget {
           height: 150.0,
         ),
         _subheading(),
-        SizedBox(
-          height: 16.0,
-        ),
-        // ArticleCard(),
+        ArticleCard(),
       ],
     );
   }
@@ -171,41 +168,83 @@ class ArticleCard extends StatelessWidget {
       shrinkWrap: true,
       // scrollDirection: Axis.vertical,
       children: <Widget>[
-        ListTile(
-          leading: Icon(Icons.arrow_forward),
-          trailing: Icon(Icons.image),
-          title: Text(
-            "Tony Stark's new Invention",
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-          subtitle: Text(
-            "Genius, Billionare, Playboy, Philanthropist",
-            style: TextStyle(color: Colors.grey),
-          ),
+        Container(
+          height: 125.0,
+          padding: EdgeInsets.only(left: 12.0, right: 12.0),
+          width: MediaQuery.of(context).size.width,
+          child: Card(
+              color: Colors.white,
+              elevation: 4.0,
+              child: Row(
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Image.asset("images/Joker.jpg"),
+                  ),
+                  Column(
+                    children: <Widget>[
+                      SizedBox(
+                        height: 15.0,
+                      ),
+                      Text(
+                        "Heading Here",
+                        style: TextStyle(
+                            fontSize: 18.0, fontWeight: FontWeight.bold),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            "Consider applying a flex factor.",
+                            style:
+                                TextStyle(fontSize: 10.0, color: Colors.grey),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              )),
         ),
-        ListTile(
-          leading: Icon(Icons.arrow_forward),
-          trailing: Icon(Icons.image),
-          title: Text(
-            "Tony Stark's new Invention",
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-          subtitle: Text(
-            "Genius, Billionare, Playboy, Philanthropist",
-            style: TextStyle(color: Colors.grey),
-          ),
-        ),
-        ListTile(
-          leading: Icon(Icons.arrow_forward),
-          trailing: Icon(Icons.image),
-          title: Text(
-            "Tony Stark's new Invention",
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-          subtitle: Text(
-            "Genius, Billionare, Playboy, Philanthropist",
-            style: TextStyle(color: Colors.grey),
-          ),
+        Container(
+          height: 125.0,
+          padding: EdgeInsets.only(left: 12.0, right: 12.0),
+          width: MediaQuery.of(context).size.width,
+          child: Card(
+              color: Colors.white,
+              elevation: 4.0,
+              child: Row(
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Image.asset("images/Joker.jpg"),
+                  ),
+                  Column(
+                    children: <Widget>[
+                      SizedBox(
+                        height: 15.0,
+                      ),
+                      Text(
+                        "Heading Here",
+                        style: TextStyle(
+                            fontSize: 18.0, fontWeight: FontWeight.bold),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            "Consider applying a flex factor.",
+                            style:
+                                TextStyle(fontSize: 10.0, color: Colors.grey),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              )),
         ),
       ],
     );
