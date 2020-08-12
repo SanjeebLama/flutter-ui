@@ -3,9 +3,19 @@ import 'package:flutter/material.dart';
 class IndexPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Header(),
+        SizedBox(
+          height: 150.0,
+        ),
+        _subheading(),
+        SizedBox(
+          height: 16.0,
+        ),
+        // ArticleCard(),
       ],
     );
   }
@@ -22,26 +32,29 @@ class Header extends StatelessWidget {
           width: double.infinity,
           color: Colors.redAccent,
         ),
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Align(
-              alignment: Alignment.topLeft,
-              child: IconButton(icon: Icon(Icons.menu), onPressed: null),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 15.0),
-              child: Text(
-                "Article Post",
-                style: TextStyle(
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black45),
+        Padding(
+          padding: const EdgeInsets.only(top: 20.0),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Align(
+                alignment: Alignment.topLeft,
+                child: IconButton(icon: Icon(Icons.menu), onPressed: null),
               ),
-            )
-          ],
+              Padding(
+                padding: const EdgeInsets.only(top: 15.0),
+                child: Text(
+                  "Articles",
+                  style: TextStyle(
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black45),
+                ),
+              )
+            ],
+          ),
         ),
         Positioned(
           top: 125.0,
@@ -123,6 +136,77 @@ class Header extends StatelessWidget {
                 ),
               ],
             ))
+      ],
+    );
+  }
+}
+
+Widget _subheading() {
+  return Padding(
+    padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: <Widget>[
+        Text(
+          "Most Popular",
+          style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.bold),
+        ),
+        Text(
+          "See All",
+          style: TextStyle(
+              fontSize: 15.0, color: Colors.grey, fontWeight: FontWeight.bold),
+        )
+      ],
+    ),
+  );
+}
+
+class ArticleCard extends StatelessWidget {
+  // final listItem =
+  //     List<String>.generate(20, (index) => "Article Number: %index");
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      shrinkWrap: true,
+      // scrollDirection: Axis.vertical,
+      children: <Widget>[
+        ListTile(
+          leading: Icon(Icons.arrow_forward),
+          trailing: Icon(Icons.image),
+          title: Text(
+            "Tony Stark's new Invention",
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          subtitle: Text(
+            "Genius, Billionare, Playboy, Philanthropist",
+            style: TextStyle(color: Colors.grey),
+          ),
+        ),
+        ListTile(
+          leading: Icon(Icons.arrow_forward),
+          trailing: Icon(Icons.image),
+          title: Text(
+            "Tony Stark's new Invention",
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          subtitle: Text(
+            "Genius, Billionare, Playboy, Philanthropist",
+            style: TextStyle(color: Colors.grey),
+          ),
+        ),
+        ListTile(
+          leading: Icon(Icons.arrow_forward),
+          trailing: Icon(Icons.image),
+          title: Text(
+            "Tony Stark's new Invention",
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+          subtitle: Text(
+            "Genius, Billionare, Playboy, Philanthropist",
+            style: TextStyle(color: Colors.grey),
+          ),
+        ),
       ],
     );
   }
