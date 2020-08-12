@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 class IndexPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        height: 100.0,
-        width: 300.0,
-        color: Colors.deepPurpleAccent,
-        child: Text(
-          "HELLO container",
-          style: TextStyle(backgroundColor: Colors.white30),
-        ),
-      ),
-    );
+    return ListView.builder(
+        itemCount: listItem.length,
+        itemBuilder: (context, index) {
+          return ListTile(
+            leading: Icon(Icons.arrow_right),
+            title: Text("list_item $index"),
+            trailing: Icon(Icons.image),
+          );
+        });
   }
+
+  final listItem = List<String>.generate(20, (index) => " ");
 }
