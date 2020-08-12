@@ -4,10 +4,10 @@ import 'home_UI/index_page.dart';
 
 void main() {
   runApp(MaterialApp(
-    title: "Furniture Shopping",
+    title: "Furniture",
     home: Scaffold(
       appBar: AppBar(
-        title: Text("Furniture Shoping"),
+        title: Text("Shoping Cart"),
         backgroundColor: Colors.deepPurple,
       ),
       body: IndexPage(),
