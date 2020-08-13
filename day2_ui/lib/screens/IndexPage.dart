@@ -9,9 +9,11 @@ class IndexPage extends StatefulWidget {
 class _IndexPageState extends State<IndexPage> {
   var selectedItem = 0;
   List childeren = [Dashboard(), Dashboard(), Dashboard(), Dashboard()];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: childeren[selectedItem],
       backgroundColor: Color(0xFF202020),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Color(0xFFD4F99),
