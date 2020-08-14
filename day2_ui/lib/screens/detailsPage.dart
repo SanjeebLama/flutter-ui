@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class DetailsPage extends StatefulWidget {
   final imgPath, title;
@@ -45,10 +44,10 @@ class _DetailsPageState extends State<DetailsPage> {
                       child: Center(
                           child: Icon(Icons.filter_list, color: Colors.white))),
                   Text(widget.title.toString().toUpperCase(),
-                      style: GoogleFonts.montserrat(
+                      style: TextStyle(
                           fontSize: 16.0,
                           fontWeight: FontWeight.w400,
-                          textStyle: TextStyle(color: Colors.white))),
+                          color: Colors.white)),
                   Container(
                     height: 40.0,
                     width: 40.0,
@@ -72,12 +71,13 @@ class _DetailsPageState extends State<DetailsPage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              Text('Trending Attractions',
-                                  style: GoogleFonts.montserrat(
+                              Text(
+                                'Trending Attractions',
+                                style: TextStyle(
                                     fontSize: 22.0,
                                     fontWeight: FontWeight.bold,
-                                    textStyle: TextStyle(color: Colors.white),
-                                  )),
+                                    color: Colors.white),
+                              ),
                               IconButton(
                                 icon:
                                     Icon(Icons.more_vert, color: Colors.white),
@@ -117,17 +117,15 @@ class _DetailsPageState extends State<DetailsPage> {
                                             CrossAxisAlignment.start,
                                         children: <Widget>[
                                           Text('Kyoto tour',
-                                              style: GoogleFonts.montserrat(
+                                              style: TextStyle(
                                                   fontSize: 18.0,
                                                   fontWeight: FontWeight.bold,
-                                                  textStyle: TextStyle(
-                                                      color: Colors.white))),
+                                                  color: Colors.white)),
                                           Text(
                                             'Three day tour around Kyoto',
-                                            style: GoogleFonts.montserrat(
+                                            style: TextStyle(
                                                 fontSize: 14.0,
-                                                textStyle: TextStyle(
-                                                    color: Colors.white)),
+                                                color: Colors.white),
                                           )
                                         ],
                                       ),
@@ -154,12 +152,13 @@ class _DetailsPageState extends State<DetailsPage> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              Text('Weekly Highlights',
-                                  style: GoogleFonts.montserrat(
+                              Text(
+                                'Weekly Highlights',
+                                style: TextStyle(
                                     fontSize: 22.0,
                                     fontWeight: FontWeight.bold,
-                                    textStyle: TextStyle(color: Colors.white),
-                                  ))
+                                    color: Colors.white),
+                              )
                             ],
                           )),
                       SizedBox(height: 15.0),
@@ -220,15 +219,15 @@ class _DetailsPageState extends State<DetailsPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(placeName,
-                      style: GoogleFonts.montserrat(
+                      style: TextStyle(
                           fontWeight: FontWeight.w500,
                           fontSize: 15.0,
-                          textStyle: TextStyle(color: Colors.white))),
+                          color: Colors.white)),
                   Text(price,
-                      style: GoogleFonts.montserrat(
+                      style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 14.0,
-                          textStyle: TextStyle(color: Colors.white)))
+                          color: Colors.white))
                 ],
               ))
         ]));
