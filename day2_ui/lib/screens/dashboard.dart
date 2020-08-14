@@ -38,7 +38,7 @@ class _DashboardState extends State<Dashboard> {
                     textStyle: TextStyle(color: Colors.white)),
               ),
               // Inreal case scenerio, this shouldnot be container
-              //should be wrapped with inkwell
+              //should be wrapped with inkwell INKWELL
               Container(
                 height: 40.0,
                 width: 40.0,
