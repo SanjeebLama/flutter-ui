@@ -1,6 +1,5 @@
 import './detailsPage.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Dashboard extends StatefulWidget {
   @override
@@ -32,10 +31,10 @@ class _DashboardState extends State<Dashboard> {
               ),
               Text(
                 'HOME',
-                style: GoogleFonts.montserrat(
+                style: TextStyle(
                     fontSize: 16.0,
                     fontWeight: FontWeight.w400,
-                    textStyle: TextStyle(color: Colors.white)),
+                    color: Colors.white),
               ),
               // Inreal case scenerio, this shouldnot be container
               //should be wrapped with inkwell INKWELL
@@ -94,18 +93,17 @@ class _DashboardState extends State<Dashboard> {
                 children: <Widget>[
                   Text(
                     country,
-                    style: GoogleFonts.montserrat(
+                    style: TextStyle(
                         fontSize: 30.0,
                         fontWeight: FontWeight.bold,
-                        textStyle: TextStyle(color: Colors.white)),
+                        color: Colors.white),
                   ),
                   Text(
                     description,
-                    style: GoogleFonts.montserrat(
-                      fontSize: 15.0,
-                      fontWeight: FontWeight.w400,
-                      textStyle: TextStyle(color: Colors.white),
-                    ),
+                    style: TextStyle(
+                        fontSize: 15.0,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white),
                   ),
                   SizedBox(height: 20.0),
                   InkWell(
@@ -123,10 +121,10 @@ class _DashboardState extends State<Dashboard> {
                       child: Center(
                         child: Text(
                           "Explore Now",
-                          style: GoogleFonts.montserrat(
+                          style: TextStyle(
                               fontSize: 12.0,
                               fontWeight: FontWeight.bold,
-                              textStyle: TextStyle(color: Color(0xFFFD4F99))),
+                              color: Color(0xFFFD4F99)),
                         ),
                       ),
                     ),
