@@ -2,6 +2,8 @@
 
 A new Flutter project.
 
+Inspiration : (https://dribbble.com/shots/9024252-TRVL-App/attachments/1146045?mode=media)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
