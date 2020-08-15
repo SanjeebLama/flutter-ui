@@ -14,44 +14,10 @@ class _DashboardState extends State<Dashboard> {
         SizedBox(
           height: 20.0,
         ),
-        Padding(
-          padding: EdgeInsets.only(top: 15.0, left: 15.0, right: 15.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Container(
-                height: 40.0,
-                width: 40.0,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(7.0),
-                    color: Color(0xFFFD4F99)),
-                child: Center(
-                  child: Icon(Icons.filter_list, color: Colors.white),
-                ),
-              ),
-              Text(
-                'HOME',
-                style: TextStyle(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w400,
-                    color: Colors.white),
-              ),
-              // Inreal case scenerio, this shouldnot be container
-              //should be wrapped with inkwell INKWELL
-              Container(
-                height: 40.0,
-                width: 40.0,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(7.0),
-                    color: Color(0xFF353535)),
-                child: Center(
-                  child: Icon(Icons.bookmark_border, color: Colors.white),
-                ),
-              ),
-            ],
-          ),
-        ),
+        _header(),
+        SizedBox(height: 10.0),
         Container(
+          //modify the size 150 by around 140 or 145 to get the best view
           height: MediaQuery.of(context).size.height - 150,
           child: ListView(
             children: <Widget>[
@@ -63,6 +29,46 @@ class _DashboardState extends State<Dashboard> {
           ),
         )
       ],
+    );
+  }
+
+  Widget _header() {
+    return Padding(
+      padding: EdgeInsets.only(top: 15.0, left: 15.0, right: 15.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Container(
+            height: 40.0,
+            width: 40.0,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(7.0),
+                color: Color(0xFFFD4F99)),
+            child: Center(
+              child: Icon(Icons.filter_list, color: Colors.white),
+            ),
+          ),
+          Text(
+            'HOME',
+            style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.w400,
+                color: Colors.white),
+          ),
+          // Inreal case scenerio, this shouldnot be container
+          //should be wrapped with inkwell INKWELL
+          Container(
+            height: 40.0,
+            width: 40.0,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(7.0),
+                color: Color(0xFF353535)),
+            child: Center(
+              child: Icon(Icons.bookmark_border, color: Colors.white),
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -84,7 +90,6 @@ class _DashboardState extends State<Dashboard> {
                     colorFilter: ColorFilter.mode(
                         Colors.black.withOpacity(0.7), BlendMode.darken))),
           ),
-          //left at 18.15
           Container(
             height: 300.0,
             child: Center(
