@@ -66,6 +66,7 @@ class _DetailsPageState extends State<DetailsPage> {
                   padding: EdgeInsets.all(15.0),
                   child: Column(
                     children: <Widget>[
+                      //For Trending Attractions and more_vert icon
                       Container(
                           width: MediaQuery.of(context).size.width - 15.0,
                           child: Row(
@@ -86,6 +87,7 @@ class _DetailsPageState extends State<DetailsPage> {
                             ],
                           )),
                       SizedBox(height: 10.0),
+                      //for image and description card
                       Stack(
                         children: <Widget>[
                           Padding(
@@ -102,6 +104,7 @@ class _DetailsPageState extends State<DetailsPage> {
                                             Colors.black.withOpacity(0.6),
                                             BlendMode.darken))),
                               )),
+                          //for discription kyoto tour and .....
                           Positioned(
                               top: 125.0,
                               left: 10.0,
